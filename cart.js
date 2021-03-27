@@ -22,8 +22,21 @@ class Cart{
         
     }
 
-    showDetail()
+    showDetail(p)
     {
+        var detail = [ ];
+        this.cart.forEach(cart_item => {
+            
+            p.forEach(product_item => {
+                
+                if(cart_item.id == product_item.id)
+                {
+                    detail.push({id:cart_item.id, price:product_item.price, total: product_item.price*cart_item.quantity, image: product_item.img});
+                }
 
+            });
+
+        });
+        return detail;
     }
 }
