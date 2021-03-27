@@ -4,6 +4,16 @@ class Products{
         this.items = items
     }
 
+    findItemDetails(item_id)
+    {
+        this.items.forEach(element => {
+            if(element.id == item_id)
+            {
+                return element
+            }
+        });
+    }
+
     reload()
     {
         
