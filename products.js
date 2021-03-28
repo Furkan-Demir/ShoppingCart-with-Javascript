@@ -18,7 +18,6 @@ class Products{
     {
         
         this.items.forEach(item => {
-            console.log("deneme");
             document.getElementById('productsPage').innerHTML += 
             `<div class="col-12 mt-2">
                 <div class="card">

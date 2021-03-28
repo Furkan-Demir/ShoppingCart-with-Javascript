@@ -31,12 +31,23 @@ class Cart{
                 
                 if(cart_item.id == product_item.id)
                 {
-                    detail.push({id:cart_item.id, price:product_item.price, total: product_item.price*cart_item.quantity, image: product_item.img});
+                    detail.push({id:cart_item.id, name: product_item.name ,price:product_item.price, total: product_item.price*cart_item.quantity,quantity:cart_item.quantity , image: product_item.img});
                 }
 
             });
 
         });
         return detail;
+    }
+
+    listinCart(p)
+    {
+        var detail = this.showDetail(p);
+        console.log(detail);
+        var html = "";
+        detail.forEach(item => {
+            html += `<li class="list-group-item">${item.name} ${item.quantity}</li>`;
+        });
+        document.getElementById('myCart').innerHTML = html;
     }
 }
