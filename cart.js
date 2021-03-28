@@ -49,5 +49,10 @@ class Cart{
             html += `<li class="list-group-item">${item.name} ${item.quantity}</li>`;
         });
         document.getElementById('myCart').innerHTML = html;
+        var total = 0;
+        detail.forEach(element => {
+            total += element.total;
+        });
+        document.getElementById('totalPrice').innerText = total;
     }
 }
